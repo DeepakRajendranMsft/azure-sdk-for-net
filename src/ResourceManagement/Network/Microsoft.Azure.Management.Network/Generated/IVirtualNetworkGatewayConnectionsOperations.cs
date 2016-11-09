@@ -165,8 +165,9 @@ namespace Microsoft.Azure.Management.Network
         /// <param name='virtualNetworkGatewayConnectionName'>
         /// The virtual network gateway connection name.
         /// </param>
-        /// <param name='value'>
-        /// The virtual network connection shared key value
+        /// <param name='parameters'>
+        /// Parameters supplied to the Begin Set Virtual Network Gateway
+        /// connection Shared key operation throughNetwork resource provider.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -183,7 +184,7 @@ namespace Microsoft.Azure.Management.Network
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        System.Threading.Tasks.Task<Microsoft.Rest.Azure.AzureOperationResponse<ConnectionSharedKey>> SetSharedKeyWithHttpMessagesAsync(string resourceGroupName, string virtualNetworkGatewayConnectionName, string value, System.Collections.Generic.Dictionary<string, System.Collections.Generic.List<string>> customHeaders = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Microsoft.Rest.Azure.AzureOperationResponse<ConnectionSharedKey>> SetSharedKeyWithHttpMessagesAsync(string resourceGroupName, string virtualNetworkGatewayConnectionName, ConnectionSharedKey parameters, System.Collections.Generic.Dictionary<string, System.Collections.Generic.List<string>> customHeaders = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// The Put VirtualNetworkGatewayConnectionSharedKey operation sets
         /// the virtual network gateway connection shared key for passed
@@ -196,8 +197,9 @@ namespace Microsoft.Azure.Management.Network
         /// <param name='virtualNetworkGatewayConnectionName'>
         /// The virtual network gateway connection name.
         /// </param>
-        /// <param name='value'>
-        /// The virtual network connection shared key value
+        /// <param name='parameters'>
+        /// Parameters supplied to the Begin Set Virtual Network Gateway
+        /// connection Shared key operation throughNetwork resource provider.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -214,7 +216,7 @@ namespace Microsoft.Azure.Management.Network
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        System.Threading.Tasks.Task<Microsoft.Rest.Azure.AzureOperationResponse<ConnectionSharedKey>> BeginSetSharedKeyWithHttpMessagesAsync(string resourceGroupName, string virtualNetworkGatewayConnectionName, string value, System.Collections.Generic.Dictionary<string, System.Collections.Generic.List<string>> customHeaders = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Microsoft.Rest.Azure.AzureOperationResponse<ConnectionSharedKey>> BeginSetSharedKeyWithHttpMessagesAsync(string resourceGroupName, string virtualNetworkGatewayConnectionName, ConnectionSharedKey parameters, System.Collections.Generic.Dictionary<string, System.Collections.Generic.List<string>> customHeaders = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// The Get VirtualNetworkGatewayConnectionSharedKey operation
         /// retrieves information about the specified virtual network gateway
@@ -277,9 +279,9 @@ namespace Microsoft.Azure.Management.Network
         /// <param name='virtualNetworkGatewayConnectionName'>
         /// The virtual network gateway connection reset shared key Name.
         /// </param>
-        /// <param name='keyLength'>
-        /// The virtual network connection reset shared key length, should
-        /// between 1 and 128.
+        /// <param name='parameters'>
+        /// Parameters supplied to the Begin Reset Virtual Network Gateway
+        /// connection shared key operation through Network resource provider.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -296,7 +298,7 @@ namespace Microsoft.Azure.Management.Network
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        System.Threading.Tasks.Task<Microsoft.Rest.Azure.AzureOperationResponse<ConnectionResetSharedKey>> ResetSharedKeyWithHttpMessagesAsync(string resourceGroupName, string virtualNetworkGatewayConnectionName, int keyLength, System.Collections.Generic.Dictionary<string, System.Collections.Generic.List<string>> customHeaders = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Microsoft.Rest.Azure.AzureOperationResponse<ConnectionResetSharedKey>> ResetSharedKeyWithHttpMessagesAsync(string resourceGroupName, string virtualNetworkGatewayConnectionName, ConnectionResetSharedKey parameters, System.Collections.Generic.Dictionary<string, System.Collections.Generic.List<string>> customHeaders = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// The VirtualNetworkGatewayConnectionResetSharedKey operation resets
         /// the virtual network gateway connection shared key for passed
@@ -309,9 +311,9 @@ namespace Microsoft.Azure.Management.Network
         /// <param name='virtualNetworkGatewayConnectionName'>
         /// The virtual network gateway connection reset shared key Name.
         /// </param>
-        /// <param name='keyLength'>
-        /// The virtual network connection reset shared key length, should
-        /// between 1 and 128.
+        /// <param name='parameters'>
+        /// Parameters supplied to the Begin Reset Virtual Network Gateway
+        /// connection shared key operation through Network resource provider.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -328,7 +330,7 @@ namespace Microsoft.Azure.Management.Network
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        System.Threading.Tasks.Task<Microsoft.Rest.Azure.AzureOperationResponse<ConnectionResetSharedKey>> BeginResetSharedKeyWithHttpMessagesAsync(string resourceGroupName, string virtualNetworkGatewayConnectionName, int keyLength, System.Collections.Generic.Dictionary<string, System.Collections.Generic.List<string>> customHeaders = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Microsoft.Rest.Azure.AzureOperationResponse<ConnectionResetSharedKey>> BeginResetSharedKeyWithHttpMessagesAsync(string resourceGroupName, string virtualNetworkGatewayConnectionName, ConnectionResetSharedKey parameters, System.Collections.Generic.Dictionary<string, System.Collections.Generic.List<string>> customHeaders = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// The List VirtualNetworkGatewayConnections operation retrieves all
         /// the virtual network gateways connections created.

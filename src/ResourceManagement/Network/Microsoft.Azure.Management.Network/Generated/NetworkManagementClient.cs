@@ -14,7 +14,11 @@ namespace Microsoft.Azure.Management.Network
     using Models;
 
     /// <summary>
-    /// Composite Swagger for Compute Client
+    /// The Microsoft Azure Network management API provides a RESTful set of
+    /// web services that interact with Microsoft Azure Networks service to
+    /// manage your network resources. The API has entities that capture the
+    /// relationship between an end user and the Microsoft Azure Networks
+    /// service.
     /// </summary>
     public partial class NetworkManagementClient : Microsoft.Rest.ServiceClient<NetworkManagementClient>, INetworkManagementClient, IAzureClient
     {
@@ -44,6 +48,11 @@ namespace Microsoft.Azure.Management.Network
         /// call.
         /// </summary>
         public string SubscriptionId { get; set; }
+
+        /// <summary>
+        /// Client Api Version.
+        /// </summary>
+        public string ApiVersion { get; private set; }
 
         /// <summary>
         /// Gets or sets the preferred language for the response.
@@ -378,6 +387,7 @@ namespace Microsoft.Azure.Management.Network
             this.VirtualNetworkGateways = new VirtualNetworkGatewaysOperations(this);
             this.VirtualNetworks = new VirtualNetworksOperations(this);
             this.BaseUri = new System.Uri("https://management.azure.com");
+            this.ApiVersion = "2016-09-01";
             this.AcceptLanguage = "en-US";
             this.LongRunningOperationRetryTimeout = 30;
             this.GenerateClientRequestId = true;
@@ -445,11 +455,14 @@ namespace Microsoft.Azure.Management.Network
             {
                 throw new Microsoft.Rest.ValidationException(Microsoft.Rest.ValidationRules.CannotBeNull, "location");
             }
+            if (this.ApiVersion == null)
+            {
+                throw new Microsoft.Rest.ValidationException(Microsoft.Rest.ValidationRules.CannotBeNull, "this.ApiVersion");
+            }
             if (this.SubscriptionId == null)
             {
                 throw new Microsoft.Rest.ValidationException(Microsoft.Rest.ValidationRules.CannotBeNull, "this.SubscriptionId");
             }
-            string apiVersion = "2016-09-01";
             // Tracing
             bool _shouldTrace = Microsoft.Rest.ServiceClientTracing.IsEnabled;
             string _invocationId = null;
@@ -459,7 +472,6 @@ namespace Microsoft.Azure.Management.Network
                 System.Collections.Generic.Dictionary<string, object> tracingParameters = new System.Collections.Generic.Dictionary<string, object>();
                 tracingParameters.Add("location", location);
                 tracingParameters.Add("domainNameLabel", domainNameLabel);
-                tracingParameters.Add("apiVersion", apiVersion);
                 tracingParameters.Add("cancellationToken", cancellationToken);
                 Microsoft.Rest.ServiceClientTracing.Enter(_invocationId, this, "CheckDnsNameAvailability", tracingParameters);
             }
@@ -473,9 +485,9 @@ namespace Microsoft.Azure.Management.Network
             {
                 _queryParameters.Add(string.Format("domainNameLabel={0}", System.Uri.EscapeDataString(domainNameLabel)));
             }
-            if (apiVersion != null)
+            if (this.ApiVersion != null)
             {
-                _queryParameters.Add(string.Format("api-version={0}", System.Uri.EscapeDataString(apiVersion)));
+                _queryParameters.Add(string.Format("api-version={0}", System.Uri.EscapeDataString(this.ApiVersion)));
             }
             if (_queryParameters.Count > 0)
             {

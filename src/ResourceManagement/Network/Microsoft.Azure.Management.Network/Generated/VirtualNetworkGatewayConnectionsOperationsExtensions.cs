@@ -258,12 +258,13 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='virtualNetworkGatewayConnectionName'>
             /// The virtual network gateway connection name.
             /// </param>
-            /// <param name='value'>
-            /// The virtual network connection shared key value
+            /// <param name='parameters'>
+            /// Parameters supplied to the Begin Set Virtual Network Gateway connection
+            /// Shared key operation throughNetwork resource provider.
             /// </param>
-            public static ConnectionSharedKey SetSharedKey(this IVirtualNetworkGatewayConnectionsOperations operations, string resourceGroupName, string virtualNetworkGatewayConnectionName, string value)
+            public static ConnectionSharedKey SetSharedKey(this IVirtualNetworkGatewayConnectionsOperations operations, string resourceGroupName, string virtualNetworkGatewayConnectionName, ConnectionSharedKey parameters)
             {
-                return System.Threading.Tasks.Task.Factory.StartNew(s => ((IVirtualNetworkGatewayConnectionsOperations)s).SetSharedKeyAsync(resourceGroupName, virtualNetworkGatewayConnectionName, value), operations, System.Threading.CancellationToken.None, System.Threading.Tasks.TaskCreationOptions.None, System.Threading.Tasks.TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return System.Threading.Tasks.Task.Factory.StartNew(s => ((IVirtualNetworkGatewayConnectionsOperations)s).SetSharedKeyAsync(resourceGroupName, virtualNetworkGatewayConnectionName, parameters), operations, System.Threading.CancellationToken.None, System.Threading.Tasks.TaskCreationOptions.None, System.Threading.Tasks.TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -281,15 +282,16 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='virtualNetworkGatewayConnectionName'>
             /// The virtual network gateway connection name.
             /// </param>
-            /// <param name='value'>
-            /// The virtual network connection shared key value
+            /// <param name='parameters'>
+            /// Parameters supplied to the Begin Set Virtual Network Gateway connection
+            /// Shared key operation throughNetwork resource provider.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async System.Threading.Tasks.Task<ConnectionSharedKey> SetSharedKeyAsync(this IVirtualNetworkGatewayConnectionsOperations operations, string resourceGroupName, string virtualNetworkGatewayConnectionName, string value, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+            public static async System.Threading.Tasks.Task<ConnectionSharedKey> SetSharedKeyAsync(this IVirtualNetworkGatewayConnectionsOperations operations, string resourceGroupName, string virtualNetworkGatewayConnectionName, ConnectionSharedKey parameters, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
             {
-                using (var _result = await operations.SetSharedKeyWithHttpMessagesAsync(resourceGroupName, virtualNetworkGatewayConnectionName, value, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.SetSharedKeyWithHttpMessagesAsync(resourceGroupName, virtualNetworkGatewayConnectionName, parameters, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -310,12 +312,13 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='virtualNetworkGatewayConnectionName'>
             /// The virtual network gateway connection name.
             /// </param>
-            /// <param name='value'>
-            /// The virtual network connection shared key value
+            /// <param name='parameters'>
+            /// Parameters supplied to the Begin Set Virtual Network Gateway connection
+            /// Shared key operation throughNetwork resource provider.
             /// </param>
-            public static ConnectionSharedKey BeginSetSharedKey(this IVirtualNetworkGatewayConnectionsOperations operations, string resourceGroupName, string virtualNetworkGatewayConnectionName, string value)
+            public static ConnectionSharedKey BeginSetSharedKey(this IVirtualNetworkGatewayConnectionsOperations operations, string resourceGroupName, string virtualNetworkGatewayConnectionName, ConnectionSharedKey parameters)
             {
-                return System.Threading.Tasks.Task.Factory.StartNew(s => ((IVirtualNetworkGatewayConnectionsOperations)s).BeginSetSharedKeyAsync(resourceGroupName, virtualNetworkGatewayConnectionName, value), operations, System.Threading.CancellationToken.None, System.Threading.Tasks.TaskCreationOptions.None, System.Threading.Tasks.TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return System.Threading.Tasks.Task.Factory.StartNew(s => ((IVirtualNetworkGatewayConnectionsOperations)s).BeginSetSharedKeyAsync(resourceGroupName, virtualNetworkGatewayConnectionName, parameters), operations, System.Threading.CancellationToken.None, System.Threading.Tasks.TaskCreationOptions.None, System.Threading.Tasks.TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -333,15 +336,16 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='virtualNetworkGatewayConnectionName'>
             /// The virtual network gateway connection name.
             /// </param>
-            /// <param name='value'>
-            /// The virtual network connection shared key value
+            /// <param name='parameters'>
+            /// Parameters supplied to the Begin Set Virtual Network Gateway connection
+            /// Shared key operation throughNetwork resource provider.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async System.Threading.Tasks.Task<ConnectionSharedKey> BeginSetSharedKeyAsync(this IVirtualNetworkGatewayConnectionsOperations operations, string resourceGroupName, string virtualNetworkGatewayConnectionName, string value, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+            public static async System.Threading.Tasks.Task<ConnectionSharedKey> BeginSetSharedKeyAsync(this IVirtualNetworkGatewayConnectionsOperations operations, string resourceGroupName, string virtualNetworkGatewayConnectionName, ConnectionSharedKey parameters, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
             {
-                using (var _result = await operations.BeginSetSharedKeyWithHttpMessagesAsync(resourceGroupName, virtualNetworkGatewayConnectionName, value, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.BeginSetSharedKeyWithHttpMessagesAsync(resourceGroupName, virtualNetworkGatewayConnectionName, parameters, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -442,13 +446,13 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='virtualNetworkGatewayConnectionName'>
             /// The virtual network gateway connection reset shared key Name.
             /// </param>
-            /// <param name='keyLength'>
-            /// The virtual network connection reset shared key length, should between 1
-            /// and 128.
+            /// <param name='parameters'>
+            /// Parameters supplied to the Begin Reset Virtual Network Gateway connection
+            /// shared key operation through Network resource provider.
             /// </param>
-            public static ConnectionResetSharedKey ResetSharedKey(this IVirtualNetworkGatewayConnectionsOperations operations, string resourceGroupName, string virtualNetworkGatewayConnectionName, int keyLength)
+            public static ConnectionResetSharedKey ResetSharedKey(this IVirtualNetworkGatewayConnectionsOperations operations, string resourceGroupName, string virtualNetworkGatewayConnectionName, ConnectionResetSharedKey parameters)
             {
-                return System.Threading.Tasks.Task.Factory.StartNew(s => ((IVirtualNetworkGatewayConnectionsOperations)s).ResetSharedKeyAsync(resourceGroupName, virtualNetworkGatewayConnectionName, keyLength), operations, System.Threading.CancellationToken.None, System.Threading.Tasks.TaskCreationOptions.None, System.Threading.Tasks.TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return System.Threading.Tasks.Task.Factory.StartNew(s => ((IVirtualNetworkGatewayConnectionsOperations)s).ResetSharedKeyAsync(resourceGroupName, virtualNetworkGatewayConnectionName, parameters), operations, System.Threading.CancellationToken.None, System.Threading.Tasks.TaskCreationOptions.None, System.Threading.Tasks.TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -466,16 +470,16 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='virtualNetworkGatewayConnectionName'>
             /// The virtual network gateway connection reset shared key Name.
             /// </param>
-            /// <param name='keyLength'>
-            /// The virtual network connection reset shared key length, should between 1
-            /// and 128.
+            /// <param name='parameters'>
+            /// Parameters supplied to the Begin Reset Virtual Network Gateway connection
+            /// shared key operation through Network resource provider.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async System.Threading.Tasks.Task<ConnectionResetSharedKey> ResetSharedKeyAsync(this IVirtualNetworkGatewayConnectionsOperations operations, string resourceGroupName, string virtualNetworkGatewayConnectionName, int keyLength, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+            public static async System.Threading.Tasks.Task<ConnectionResetSharedKey> ResetSharedKeyAsync(this IVirtualNetworkGatewayConnectionsOperations operations, string resourceGroupName, string virtualNetworkGatewayConnectionName, ConnectionResetSharedKey parameters, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
             {
-                using (var _result = await operations.ResetSharedKeyWithHttpMessagesAsync(resourceGroupName, virtualNetworkGatewayConnectionName, keyLength, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.ResetSharedKeyWithHttpMessagesAsync(resourceGroupName, virtualNetworkGatewayConnectionName, parameters, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }
@@ -496,13 +500,13 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='virtualNetworkGatewayConnectionName'>
             /// The virtual network gateway connection reset shared key Name.
             /// </param>
-            /// <param name='keyLength'>
-            /// The virtual network connection reset shared key length, should between 1
-            /// and 128.
+            /// <param name='parameters'>
+            /// Parameters supplied to the Begin Reset Virtual Network Gateway connection
+            /// shared key operation through Network resource provider.
             /// </param>
-            public static ConnectionResetSharedKey BeginResetSharedKey(this IVirtualNetworkGatewayConnectionsOperations operations, string resourceGroupName, string virtualNetworkGatewayConnectionName, int keyLength)
+            public static ConnectionResetSharedKey BeginResetSharedKey(this IVirtualNetworkGatewayConnectionsOperations operations, string resourceGroupName, string virtualNetworkGatewayConnectionName, ConnectionResetSharedKey parameters)
             {
-                return System.Threading.Tasks.Task.Factory.StartNew(s => ((IVirtualNetworkGatewayConnectionsOperations)s).BeginResetSharedKeyAsync(resourceGroupName, virtualNetworkGatewayConnectionName, keyLength), operations, System.Threading.CancellationToken.None, System.Threading.Tasks.TaskCreationOptions.None, System.Threading.Tasks.TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return System.Threading.Tasks.Task.Factory.StartNew(s => ((IVirtualNetworkGatewayConnectionsOperations)s).BeginResetSharedKeyAsync(resourceGroupName, virtualNetworkGatewayConnectionName, parameters), operations, System.Threading.CancellationToken.None, System.Threading.Tasks.TaskCreationOptions.None, System.Threading.Tasks.TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -520,16 +524,16 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='virtualNetworkGatewayConnectionName'>
             /// The virtual network gateway connection reset shared key Name.
             /// </param>
-            /// <param name='keyLength'>
-            /// The virtual network connection reset shared key length, should between 1
-            /// and 128.
+            /// <param name='parameters'>
+            /// Parameters supplied to the Begin Reset Virtual Network Gateway connection
+            /// shared key operation through Network resource provider.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async System.Threading.Tasks.Task<ConnectionResetSharedKey> BeginResetSharedKeyAsync(this IVirtualNetworkGatewayConnectionsOperations operations, string resourceGroupName, string virtualNetworkGatewayConnectionName, int keyLength, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+            public static async System.Threading.Tasks.Task<ConnectionResetSharedKey> BeginResetSharedKeyAsync(this IVirtualNetworkGatewayConnectionsOperations operations, string resourceGroupName, string virtualNetworkGatewayConnectionName, ConnectionResetSharedKey parameters, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
             {
-                using (var _result = await operations.BeginResetSharedKeyWithHttpMessagesAsync(resourceGroupName, virtualNetworkGatewayConnectionName, keyLength, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.BeginResetSharedKeyWithHttpMessagesAsync(resourceGroupName, virtualNetworkGatewayConnectionName, parameters, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }

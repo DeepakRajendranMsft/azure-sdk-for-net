@@ -391,13 +391,13 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='virtualNetworkGatewayName'>
             /// The name of the virtual network gateway.
             /// </param>
-            /// <param name='processorArchitecture'>
-            /// VPN client Processor Architecture -Amd64/X86. Possible values include:
-            /// 'Amd64', 'X86'
+            /// <param name='parameters'>
+            /// Parameters supplied to the Begin Generating  Virtual Network Gateway Vpn
+            /// client package operation through Network resource provider.
             /// </param>
-            public static string Generatevpnclientpackage(this IVirtualNetworkGatewaysOperations operations, string resourceGroupName, string virtualNetworkGatewayName, string processorArchitecture)
+            public static string Generatevpnclientpackage(this IVirtualNetworkGatewaysOperations operations, string resourceGroupName, string virtualNetworkGatewayName, VpnClientParameters parameters)
             {
-                return System.Threading.Tasks.Task.Factory.StartNew(s => ((IVirtualNetworkGatewaysOperations)s).GeneratevpnclientpackageAsync(resourceGroupName, virtualNetworkGatewayName, processorArchitecture), operations, System.Threading.CancellationToken.None, System.Threading.Tasks.TaskCreationOptions.None, System.Threading.Tasks.TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
+                return System.Threading.Tasks.Task.Factory.StartNew(s => ((IVirtualNetworkGatewaysOperations)s).GeneratevpnclientpackageAsync(resourceGroupName, virtualNetworkGatewayName, parameters), operations, System.Threading.CancellationToken.None, System.Threading.Tasks.TaskCreationOptions.None, System.Threading.Tasks.TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
             }
 
             /// <summary>
@@ -414,16 +414,16 @@ namespace Microsoft.Azure.Management.Network
             /// <param name='virtualNetworkGatewayName'>
             /// The name of the virtual network gateway.
             /// </param>
-            /// <param name='processorArchitecture'>
-            /// VPN client Processor Architecture -Amd64/X86. Possible values include:
-            /// 'Amd64', 'X86'
+            /// <param name='parameters'>
+            /// Parameters supplied to the Begin Generating  Virtual Network Gateway Vpn
+            /// client package operation through Network resource provider.
             /// </param>
             /// <param name='cancellationToken'>
             /// The cancellation token.
             /// </param>
-            public static async System.Threading.Tasks.Task<string> GeneratevpnclientpackageAsync(this IVirtualNetworkGatewaysOperations operations, string resourceGroupName, string virtualNetworkGatewayName, string processorArchitecture, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+            public static async System.Threading.Tasks.Task<string> GeneratevpnclientpackageAsync(this IVirtualNetworkGatewaysOperations operations, string resourceGroupName, string virtualNetworkGatewayName, VpnClientParameters parameters, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
             {
-                using (var _result = await operations.GeneratevpnclientpackageWithHttpMessagesAsync(resourceGroupName, virtualNetworkGatewayName, processorArchitecture, null, cancellationToken).ConfigureAwait(false))
+                using (var _result = await operations.GeneratevpnclientpackageWithHttpMessagesAsync(resourceGroupName, virtualNetworkGatewayName, parameters, null, cancellationToken).ConfigureAwait(false))
                 {
                     return _result.Body;
                 }

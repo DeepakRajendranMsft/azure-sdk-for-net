@@ -247,9 +247,10 @@ namespace Microsoft.Azure.Management.Network
         /// <param name='virtualNetworkGatewayName'>
         /// The name of the virtual network gateway.
         /// </param>
-        /// <param name='processorArchitecture'>
-        /// VPN client Processor Architecture -Amd64/X86. Possible values
-        /// include: 'Amd64', 'X86'
+        /// <param name='parameters'>
+        /// Parameters supplied to the Begin Generating  Virtual Network
+        /// Gateway Vpn client package operation through Network resource
+        /// provider.
         /// </param>
         /// <param name='customHeaders'>
         /// The headers that will be added to request.
@@ -266,7 +267,7 @@ namespace Microsoft.Azure.Management.Network
         /// <exception cref="Microsoft.Rest.ValidationException">
         /// Thrown when a required parameter is null
         /// </exception>
-        System.Threading.Tasks.Task<Microsoft.Rest.Azure.AzureOperationResponse<string>> GeneratevpnclientpackageWithHttpMessagesAsync(string resourceGroupName, string virtualNetworkGatewayName, string processorArchitecture, System.Collections.Generic.Dictionary<string, System.Collections.Generic.List<string>> customHeaders = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Microsoft.Rest.Azure.AzureOperationResponse<string>> GeneratevpnclientpackageWithHttpMessagesAsync(string resourceGroupName, string virtualNetworkGatewayName, VpnClientParameters parameters, System.Collections.Generic.Dictionary<string, System.Collections.Generic.List<string>> customHeaders = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         /// <summary>
         /// The List VirtualNetworkGateways operation retrieves all the
         /// virtual network gateways stored.

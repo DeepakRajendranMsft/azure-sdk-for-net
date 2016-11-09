@@ -13,7 +13,11 @@ namespace Microsoft.Azure.Management.Network
     using Models;
 
     /// <summary>
-    /// Composite Swagger for Compute Client
+    /// The Microsoft Azure Network management API provides a RESTful set of
+    /// web services that interact with Microsoft Azure Networks service to
+    /// manage your network resources. The API has entities that capture the
+    /// relationship between an end user and the Microsoft Azure Networks
+    /// service.
     /// </summary>
     public partial interface INetworkManagementClient : System.IDisposable
     {
@@ -43,6 +47,11 @@ namespace Microsoft.Azure.Management.Network
         /// every service call.
         /// </summary>
         string SubscriptionId { get; set; }
+
+        /// <summary>
+        /// Client Api Version.
+        /// </summary>
+        string ApiVersion { get; }
 
         /// <summary>
         /// Gets or sets the preferred language for the response.
